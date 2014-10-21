@@ -30,8 +30,16 @@ namespace NearBuy
 			}
 			celda.SelectionStyle = UITableViewCellSelectionStyle.Blue;
 			celda.TextLabel.Text = ListaDatos [indexPath.Row];
+			celda.Accessory = UITableViewCellAccessory.DisclosureIndicator;
 			return celda;
 		}
+
+		public override void RowSelected (UITableView tableView, NSIndexPath indexPath)
+		{
+			new UIAlertView("Row Selected", ListaDatos[indexPath.Row], null, "OK", null).Show();
+			tableView.DeselectRow (indexPath, true); // iOS convention is to remove the highlight
+		}
+
 		public override string TitleForHeader (UITableView tableView, int section)
 		{
 			return "Lista Datos";
