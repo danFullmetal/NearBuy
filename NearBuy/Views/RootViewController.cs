@@ -27,7 +27,12 @@ namespace NearBuy
 		{
 			Title = "NearBuy";
 			NavigationItem.SetRightBarButtonItem (new UIBarButtonItem (UIBarButtonSystemItem.Action, (sender, args) => {
-
+				ListaDatos.Clear ();
+				GetData ();
+				DataSource data = new DataSource (ListaDatos);
+				tvDatos.Source = data;
+				tvDatos.ReloadData ();
+				tvDatos.ReloadInputViews ();
 			}), true);
 
 
@@ -45,7 +50,6 @@ namespace NearBuy
 		{
 			GetData ();
 			base.ViewDidLoad ();
-			btnActualizar.TouchUpInside += btnActualizar__HandleTouchUpInside;
 			DataSource data = new DataSource (ListaDatos);
 			//ListaDatos.InsertRange (0, tableItems);
 
@@ -55,17 +59,6 @@ namespace NearBuy
 
 			
 			// Perform any additional setup after loading the view, typically from a nib.
-		}
-
-		void btnActualizar__HandleTouchUpInside (object sender, EventArgs e)
-		{
-			ListaDatos.Clear ();
-			GetData ();
-			DataSource data = new DataSource (ListaDatos);
-			//ListaDatos.InsertRange (0, tableItems);
-			tvDatos.Source = data;
-			tvDatos.ReloadData ();
-			tvDatos.ReloadInputViews ();
 		}
 
 		public void GetData ()
