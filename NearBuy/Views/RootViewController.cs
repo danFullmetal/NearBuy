@@ -14,17 +14,19 @@ namespace NearBuy
 {
 	public partial class RootViewController : UIViewController
 	{
-		List<string> ListaDatos = new List<string>();
+		List<string> ListaDatos = new List<string> ();
 		public List<Respuesta> jsonObj;
 
 
-		public class Respuesta{
-			public string Name { get; set;}
+		public class Respuesta
+		{
+			public string Name { get; set; }
 		}
+
 		public RootViewController () : base ("RootViewController", null)
 		{
 			Title = "NearBuy";
-			NavigationItem.SetRightBarButtonItem (new UIBarButtonItem(UIBarButtonSystemItem.Action, (sender, args) => {
+			NavigationItem.SetRightBarButtonItem (new UIBarButtonItem (UIBarButtonSystemItem.Action, (sender, args) => {
 
 			}), true);
 
@@ -57,45 +59,60 @@ namespace NearBuy
 
 		void btnActualizar__HandleTouchUpInside (object sender, EventArgs e)
 		{
-			ListaDatos.Clear();
-			GetData();
+			ListaDatos.Clear ();
+			GetData ();
 			DataSource data = new DataSource (ListaDatos);
 			//ListaDatos.InsertRange (0, tableItems);
 			tvDatos.Source = data;
 			tvDatos.ReloadData ();
 			tvDatos.ReloadInputViews ();
 		}
-		public void GetData(){
-			// Create a new RestClient and RestRequest
-			var client = new RestClient ("http://bordadossantiago.com/getjson.php");
-			var request = new RestRequest ("resource/{Name}", Method.GET);
 
-			// ask for the response to be in JSON syntax
-			request.RequestFormat = DataFormat.Json;
+		public void GetData ()
+		{
+			if (!Reachability.IsHostReachable ("www.bordadossantiago.com")) {
+				var alert = new UIAlertView {
+					Title = "Unable to connect to server", 
+					Message = "Verify network connections"
+				};
+				alert.AddButton ("OK");
+				// last button added is the 'cancel' button (index of '2')
+				alert.Clicked += delegate(object a, UIButtonEventArgs b) {
+					Console.WriteLine ("Button " + b.ButtonIndex.ToString () + " clicked");
+				};
+				alert.Show ();
+			} else {
+				// Create a new RestClient and RestRequest
+				var client = new RestClient ("http://bordadossantiago.com/getjson.php");
+				var request = new RestRequest ("resource/{Name}", Method.GET);
 
-			//send the request to the web service and store the response when it comes back
-			var response = client.Execute (request);
-			// The next line of code will only run after the response has been received
+				// ask for the response to be in JSON syntax
+				request.RequestFormat = DataFormat.Json;
 
-			// Create a new Deserializer to be able to parse the JSON object
-			RestSharp.Deserializers.JsonDeserializer deserial = new JsonDeserializer ();
+				//send the request to the web service and store the response when it comes back
+				var response = client.Execute (request);
+				// The next line of code will only run after the response has been received
 
-			//Single variable
-			jsonObj = deserial.Deserialize<List<Respuesta>> (response);
+				// Create a new Deserializer to be able to parse the JSON object
+				RestSharp.Deserializers.JsonDeserializer deserial = new JsonDeserializer ();
 
-			/*
+				//Single variable
+				jsonObj = deserial.Deserialize<List<Respuesta>> (response);
+
+				/*
 			for (int i = 0; i < jsonObj.Count; i++) {
 				Console.WriteLine ("Name: {0}", jsonObj[i].Name);
 			}*/
 
-			//foreach para sacar los valores y aniadirlos a la lista
-			foreach(Respuesta x in jsonObj){
-				Respuesta datos = new Respuesta ();
-				datos.Name = x.Name;
-				ListaDatos.Add (datos.Name);
+				//foreach para sacar los valores y aniadirlos a la lista
+				foreach (Respuesta x in jsonObj) {
+					Respuesta datos = new Respuesta ();
+					datos.Name = x.Name;
+					ListaDatos.Add (datos.Name);
+				}
 			}
-
 		}
+
 		public override void ViewDidUnload ()
 		{
 			base.ViewDidUnload ();
@@ -107,6 +124,7 @@ namespace NearBuy
 
 			ReleaseDesignerOutlets ();
 		}
+
 		public override bool ShouldAutorotateToInterfaceOrientation (UIInterfaceOrientation toInterfaceOrientation)
 		{
 			// Return true for supported orientations
