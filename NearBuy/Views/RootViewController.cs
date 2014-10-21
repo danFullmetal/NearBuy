@@ -27,6 +27,7 @@ namespace NearBuy
 		{
 			Title = "NearBuy";
 			NavigationItem.SetRightBarButtonItem (new UIBarButtonItem (UIBarButtonSystemItem.Action, (sender, args) => {
+				//Boton de actualización
 				ListaDatos.Clear ();
 				GetData ();
 				DataSource data = new DataSource (ListaDatos);
