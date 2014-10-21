@@ -26,7 +26,7 @@ namespace NearBuy
 		public RootViewController () : base ("RootViewController", null)
 		{
 			Title = "NearBuy";
-			NavigationItem.SetRightBarButtonItem (new UIBarButtonItem (UIBarButtonSystemItem.Action, (sender, args) => {
+			NavigationItem.SetRightBarButtonItem (new UIBarButtonItem ("Actualizar",UIBarButtonItemStyle.Plain, (sender, args) => {
 				//Boton de actualización
 				ListaDatos.Clear ();
 				GetData ();
