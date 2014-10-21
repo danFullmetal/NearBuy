@@ -30,7 +30,7 @@ namespace NearBuy
 				//Boton de actualización
 				ListaDatos.Clear ();
 				GetData ();
-				DataSource data = new DataSource (ListaDatos);
+				DataSource data = new DataSource (ListaDatos, this);
 				tvDatos.Source = data;
 				tvDatos.ReloadData ();
 				tvDatos.ReloadInputViews ();
@@ -51,7 +51,7 @@ namespace NearBuy
 		{
 			GetData ();
 			base.ViewDidLoad ();
-			DataSource data = new DataSource (ListaDatos);
+			DataSource data = new DataSource (ListaDatos, this);
 			//ListaDatos.InsertRange (0, tableItems);
 
 			tvDatos.Source = data;

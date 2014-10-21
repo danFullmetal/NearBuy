@@ -120,6 +120,10 @@
     </Compile>
     <Compile Include="DataSource.cs" />
     <Compile Include="Reachability.cs" />
+    <Compile Include="Views\InfoView.cs" />
+    <Compile Include="Views\InfoView.designer.cs">
+      <DependentUpon>InfoView.cs</DependentUpon>
+    </Compile>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.MonoTouch.CSharp.targets" />
   <ItemGroup>
@@ -131,6 +135,7 @@
     <InterfaceDefinition Include="Views\CategoViewController.xib" />
     <InterfaceDefinition Include="Views\FavorViewController.xib" />
     <InterfaceDefinition Include="Views\AyudaViewController.xib" />
+    <InterfaceDefinition Include="Views\InfoView.xib" />
   </ItemGroup>
   <ItemGroup>
     <XamarinComponentReference Include="restsharp">

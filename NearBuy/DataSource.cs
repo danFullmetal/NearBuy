@@ -10,11 +10,14 @@ namespace NearBuy
 {
 	public class DataSource : UITableViewSource
 	{
+		UIViewController parentController;
 		static NSString Identificador = new NSString("Tabla Prueba");
 		List <string> ListaDatos;
-		public DataSource (List <string> _listadatos)
+
+		public DataSource (List <string> _listadatos, UIViewController parentController)
 		{
 			ListaDatos = _listadatos;
+			this.parentController = parentController;
 		}
 
 		public override int RowsInSection (UITableView tableview, int section)
@@ -36,7 +39,9 @@ namespace NearBuy
 
 		public override void RowSelected (UITableView tableView, NSIndexPath indexPath)
 		{
-			new UIAlertView("Row Selected", ListaDatos[indexPath.Row], null, "OK", null).Show();
+			//new UIAlertView("Row Selected", ListaDatos[indexPath.Row], null, "OK", null).Show();
+
+			parentController.NavigationController.PushViewController (new InfoView(ListaDatos[indexPath.Row]), true);
 			tableView.DeselectRow (indexPath, true); // iOS convention is to remove the highlight
 		}
 
