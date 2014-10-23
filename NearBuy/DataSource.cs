@@ -11,10 +11,10 @@ namespace NearBuy
 	public class DataSource : UITableViewSource
 	{
 		UIViewController parentController;
-		static NSString Identificador = new NSString("Tabla Prueba");
-		List <string> ListaDatos;
+		static NSString Identificador = new NSString ("Tabla Prueba");
+		List<JSONObjects> ListaDatos;
 
-		public DataSource (List <string> _listadatos, UIViewController parentController)
+		public DataSource (List <JSONObjects> _listadatos, UIViewController parentController)
 		{
 			ListaDatos = _listadatos;
 			this.parentController = parentController;
@@ -32,16 +32,14 @@ namespace NearBuy
 				celda = new UITableViewCell (UITableViewCellStyle.Default, Identificador);
 			}
 			celda.SelectionStyle = UITableViewCellSelectionStyle.Blue;
-			celda.TextLabel.Text = ListaDatos [indexPath.Row];
+			celda.TextLabel.Text = ListaDatos [indexPath.Row].Name;
 			celda.Accessory = UITableViewCellAccessory.DisclosureIndicator;
 			return celda;
 		}
 
 		public override void RowSelected (UITableView tableView, NSIndexPath indexPath)
 		{
-			//new UIAlertView("Row Selected", ListaDatos[indexPath.Row], null, "OK", null).Show();
-
-			parentController.NavigationController.PushViewController (new InfoView(ListaDatos[indexPath.Row]), true);
+			parentController.NavigationController.PushViewController (new InfoView (ListaDatos [indexPath.Row]), true);
 			tableView.DeselectRow (indexPath, true); // iOS convention is to remove the highlight
 		}
 
@@ -52,7 +50,11 @@ namespace NearBuy
 
 		public override string TitleForFooter (UITableView tableView, int section)
 		{
-			return "Elementos: "+ListaDatos.Count;
+			if (ListaDatos.Count > 0) {
+				return "Elementos: " + ListaDatos.Count;
+			} else {
+				return "Elementos: 0";
+			}
 		}
 	}
 }

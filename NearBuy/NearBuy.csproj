@@ -124,6 +124,7 @@
     <Compile Include="Views\InfoView.designer.cs">
       <DependentUpon>InfoView.cs</DependentUpon>
     </Compile>
+    <Compile Include="JSONObjects.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.MonoTouch.CSharp.targets" />
   <ItemGroup>

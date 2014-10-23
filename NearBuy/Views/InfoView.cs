@@ -2,6 +2,7 @@
 using System;
 using System.Drawing;
 
+using System.Collections.Generic;
 using MonoTouch.Foundation;
 using MonoTouch.UIKit;
 
@@ -9,9 +10,10 @@ namespace NearBuy
 {
 	public partial class InfoView : UIViewController
 	{
-		String data;
-		public InfoView(String data){
-			this.data = data;
+		JSONObjects jsonObject;
+
+		public InfoView(JSONObjects jsonObject){
+			this.jsonObject = jsonObject;
 		}
 
 		public InfoView () : base ("InfoView", null)
@@ -20,17 +22,14 @@ namespace NearBuy
 
 		public override void DidReceiveMemoryWarning ()
 		{
-			// Releases the view if it doesn't have a superview.
 			base.DidReceiveMemoryWarning ();
-			
-			// Release any cached data, images, etc that aren't in use.
 		}
 
 		public override void ViewDidLoad ()
 		{
 			base.ViewDidLoad ();
-			
-			// Perform any additional setup after loading the view, typically from a nib.
+			lbJSName.Text = jsonObject.Name;
+			lbJSMessage.Text = jsonObject.Message;
 		}
 	}
 }
