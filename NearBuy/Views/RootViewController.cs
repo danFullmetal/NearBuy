@@ -14,7 +14,7 @@ namespace NearBuy
 {
 	public partial class RootViewController : UIViewController
 	{
-		public List<JSONObjects> jsonObj = new List<JSONObjects>();
+		public List<JsonTienda> jsonObj = new List<JsonTienda>();
 
 		public RootViewController () : base ("RootViewController", null)
 		{
@@ -54,12 +54,12 @@ namespace NearBuy
 				alert.AddButton ("OK");
 				alert.Show ();
 			} else {
-				var client = new RestClient ("http://bordadossantiago.com/getjson.php");
+				var client = new RestClient ("http://bordadossantiago.com/jsonTienda.php");
 				var request = new RestRequest ("resource/{Name}", Method.GET);
 				request.RequestFormat = DataFormat.Json;
 				var response = client.Execute (request);
 				RestSharp.Deserializers.JsonDeserializer deserial = new JsonDeserializer ();
-				jsonObj = deserial.Deserialize<List<JSONObjects>> (response);
+				jsonObj = deserial.Deserialize<List<JsonTienda>> (response);
 			}
 		}
 	}

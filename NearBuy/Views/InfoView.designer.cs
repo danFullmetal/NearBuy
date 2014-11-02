@@ -13,21 +13,53 @@ namespace NearBuy
 	partial class InfoView
 	{
 		[Outlet]
-		MonoTouch.UIKit.UILabel lbJSMessage { get; set; }
+		MonoTouch.UIKit.UIImageView imgViewPromo { get; set; }
 
 		[Outlet]
-		MonoTouch.UIKit.UILabel lbJSName { get; set; }
+		MonoTouch.UIKit.UILabel lbDescripcion { get; set; }
+
+		[Outlet]
+		MonoTouch.UIKit.UILabel lbJSFechaFin { get; set; }
+
+		[Outlet]
+		MonoTouch.UIKit.UILabel lbJSFechaIn { get; set; }
+
+		[Outlet]
+		MonoTouch.UIKit.UILabel lbPrecioA { get; set; }
+
+		[Outlet]
+		MonoTouch.UIKit.UILabel lbPrecioB { get; set; }
 		
 		void ReleaseDesignerOutlets ()
 		{
-			if (lbJSName != null) {
-				lbJSName.Dispose ();
-				lbJSName = null;
+			if (imgViewPromo != null) {
+				imgViewPromo.Dispose ();
+				imgViewPromo = null;
 			}
 
-			if (lbJSMessage != null) {
-				lbJSMessage.Dispose ();
-				lbJSMessage = null;
+			if (lbDescripcion != null) {
+				lbDescripcion.Dispose ();
+				lbDescripcion = null;
+			}
+
+			if (lbJSFechaFin != null) {
+				lbJSFechaFin.Dispose ();
+				lbJSFechaFin = null;
+			}
+
+			if (lbJSFechaIn != null) {
+				lbJSFechaIn.Dispose ();
+				lbJSFechaIn = null;
+			}
+
+			if (lbPrecioA != null) {
+				lbPrecioA.Dispose ();
+				lbPrecioA = null;
+			}
+
+			if (lbPrecioB != null) {
+				lbPrecioB.Dispose ();
+				lbPrecioB = null;
 			}
 		}
 	}

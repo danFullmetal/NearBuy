@@ -1,25 +1,20 @@
 ﻿using System;
-
-//Nuevas librerias
-using System.Collections.Generic;
-
 using MonoTouch.UIKit;
 using MonoTouch.Foundation;
+using System.Collections.Generic;
 
 namespace NearBuy
 {
-	public class DataSource : UITableViewSource
+	public class DataSourceTienda : UITableViewSource
 	{
 		UIViewController parentController;
 		static NSString Identificador = new NSString ("Tabla Prueba");
-		List<JsonTienda> ListaDatos;
-
-		public DataSource (List <JsonTienda> _listadatos, UIViewController parentController)
+		List<JsonPromos> ListaDatos;
+		public DataSourceTienda (List <JsonPromos> _listadatos, UIViewController parentController)
 		{
 			ListaDatos = _listadatos;
 			this.parentController = parentController;
 		}
-
 		public override int RowsInSection (UITableView tableview, int section)
 		{
 			return ListaDatos.Count;
@@ -32,7 +27,7 @@ namespace NearBuy
 				celda = new UITableViewCell (UITableViewCellStyle.Default, Identificador);
 			}
 			celda.SelectionStyle = UITableViewCellSelectionStyle.Blue;
-			celda.TextLabel.Text = ListaDatos [indexPath.Row].nombre;
+			celda.TextLabel.Text = ListaDatos [indexPath.Row].titulo;
 			celda.Accessory = UITableViewCellAccessory.DisclosureIndicator;
 			return celda;
 		}
@@ -40,7 +35,7 @@ namespace NearBuy
 		public override void RowSelected (UITableView tableView, NSIndexPath indexPath)
 		{
 
-			parentController.NavigationController.PushViewController (new PromosViewController (ListaDatos [indexPath.Row].idTienda), true);
+			parentController.NavigationController.PushViewController (new InfoView (ListaDatos [indexPath.Row]), true);
 			tableView.DeselectRow (indexPath, true); // iOS convention is to remove the highlight
 		}
 
@@ -57,7 +52,7 @@ namespace NearBuy
 				return "Elementos: 0";
 			}
 		}
+
 	}
 }
-
 

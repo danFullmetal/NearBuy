@@ -10,14 +10,16 @@ namespace NearBuy
 {
 	public partial class InfoView : UIViewController
 	{
-		JSONObjects jsonObject;
+		JsonPromos jsonPromos;
+		public string promoImage;
 
-		public InfoView(JSONObjects jsonObject){
-			this.jsonObject = jsonObject;
+		public InfoView(JsonPromos jsonPromos){
+			this.jsonPromos = jsonPromos;
 		}
 
 		public InfoView () : base ("InfoView", null)
 		{
+		
 		}
 
 		public override void DidReceiveMemoryWarning ()
@@ -28,8 +30,23 @@ namespace NearBuy
 		public override void ViewDidLoad ()
 		{
 			base.ViewDidLoad ();
-			lbJSName.Text = jsonObject.Name;
-			lbJSMessage.Text = jsonObject.Message;
+			this.Title = jsonPromos.titulo;
+
+			promoImage = jsonPromos.imagen;
+			byte[] bytes = Convert.FromBase64String (promoImage);
+			NSData data = NSData.FromArray (bytes);
+			var uiImage = UIImage.LoadFromData (data);
+
+			imgViewPromo.Image = uiImage;
+
+			lbDescripcion.Text = jsonPromos.descripcion;
+			lbJSFechaIn.Text = jsonPromos.fechaLanzamiento.ToString();
+			lbJSFechaFin.Text = jsonPromos.fechaVencimiento.ToString();
+			lbPrecioA.Text = jsonPromos.precio.ToString();
+			lbPrecioB.Text = jsonPromos.descuento.ToString();
+
+
+
 		}
 	}
 }

@@ -91,6 +91,7 @@
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\Default-568h%402x.png" />
+    <BundleResource Include="Resources\Icon.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Info.plist" />
@@ -125,6 +126,13 @@
       <DependentUpon>InfoView.cs</DependentUpon>
     </Compile>
     <Compile Include="JSONObjects.cs" />
+    <Compile Include="JsonTienda.cs" />
+    <Compile Include="DataSourceTienda.cs" />
+    <Compile Include="JsonPromos.cs" />
+    <Compile Include="Views\PromosViewController.cs" />
+    <Compile Include="Views\PromosViewController.designer.cs">
+      <DependentUpon>PromosViewController.cs</DependentUpon>
+    </Compile>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.MonoTouch.CSharp.targets" />
   <ItemGroup>
@@ -137,6 +145,7 @@
     <InterfaceDefinition Include="Views\FavorViewController.xib" />
     <InterfaceDefinition Include="Views\AyudaViewController.xib" />
     <InterfaceDefinition Include="Views\InfoView.xib" />
+    <InterfaceDefinition Include="Views\PromosViewController.xib" />
   </ItemGroup>
   <ItemGroup>
     <XamarinComponentReference Include="restsharp">
