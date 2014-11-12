@@ -36,8 +36,14 @@ namespace NearBuy
 
 		public override void ViewDidLoad ()
 		{
-			GetData ();
+
 			base.ViewDidLoad ();
+			//Estilos para la barra de navegacion
+			this.NavigationController.NavigationBar.TintColor = UIColor.Gray;
+			//this.NavigationController.NavigationBar.BarTintColor =  UIColor.Blue;
+			this.NavigationController.NavigationBar.Translucent = true;
+			//Fin estilos barra navegacion
+			GetData ();
 			DataSource data = new DataSource (jsonObj, this);
 			tvDatos.Source = data;
 			tvDatos.ReloadData ();

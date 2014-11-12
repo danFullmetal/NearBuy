@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using MonoTouch.UIKit;
 using MonoTouch.Foundation;
 
+
 namespace NearBuy
 {
 	public class DataSource : UITableViewSource
@@ -40,23 +41,15 @@ namespace NearBuy
 		public override void RowSelected (UITableView tableView, NSIndexPath indexPath)
 		{
 
-			parentController.NavigationController.PushViewController (new PromosViewController (ListaDatos [indexPath.Row].idTienda), true);
+			parentController.NavigationController.PushViewController (new PromosViewController (ListaDatos [indexPath.Row].idTienda, ListaDatos [indexPath.Row].nombre), true);
 			tableView.DeselectRow (indexPath, true); // iOS convention is to remove the highlight
 		}
 
 		public override string TitleForHeader (UITableView tableView, int section)
 		{
-			return "Lista Datos";
+			return "Tiendas";
 		}
 
-		public override string TitleForFooter (UITableView tableView, int section)
-		{
-			if (ListaDatos.Count > 0) {
-				return "Elementos: " + ListaDatos.Count;
-			} else {
-				return "Elementos: 0";
-			}
-		}
 	}
 }
 

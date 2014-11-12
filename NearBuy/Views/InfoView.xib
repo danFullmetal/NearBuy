@@ -6,65 +6,103 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="InfoView">
             <connections>
-                <outlet property="imgViewPromo" destination="YCc-Ef-c76" id="xlR-JF-VhR"/>
-                <outlet property="lbDescripcion" destination="FK0-2e-xqd" id="YAK-7W-oU6"/>
-                <outlet property="lbJSFechaFin" destination="uHP-Mm-1yf" id="pE6-Tl-IZs"/>
-                <outlet property="lbJSFechaIn" destination="dn2-Ci-tSR" id="T2X-pS-RrW"/>
+                <outlet property="btnCountdown" destination="SyL-Hv-T5K" id="29L-D8-Qsn"/>
                 <outlet property="lbPrecioA" destination="Yxc-kB-bhm" id="25T-d1-ZyX"/>
                 <outlet property="lbPrecioB" destination="GA6-W1-n9X" id="hTb-iW-yuR"/>
+                <outlet property="lbPrecioTotal" destination="Fzp-ZC-aFl" id="JnQ-ur-grX"/>
+                <outlet property="lbTituloPromo" destination="sxX-Ks-Gvw" id="N1R-le-dgj"/>
+                <outlet property="txtDescr" destination="p4T-48-gJe" id="7ZY-z6-QiX"/>
+                <outlet property="uiImagePromo" destination="G7h-Es-3FH" id="4Us-jI-O2a"/>
                 <outlet property="view" destination="iN0-l3-epB" id="kCW-yf-GMq"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <view contentMode="scaleToFill" id="iN0-l3-epB">
+        <view contentMode="center" id="iN0-l3-epB">
             <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7yK-dC-QJe"/>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yxc-kB-bhm">
-                    <rect key="frame" x="30" y="273" width="112" height="21"/>
+                    <rect key="frame" x="17" y="278" width="50" height="21"/>
                     <attributedString key="attributedText">
                         <fragment content="Precio anterior">
                             <attributes>
+                                <color key="NSColor" red="0.50284090909090917" green="0.50284090909090917" blue="0.50284090909090917" alpha="1" colorSpace="calibratedRGB"/>
+                                <font key="NSFont" size="13" name="ArialMT"/>
+                                <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                            </attributes>
+                        </fragment>
+                    </attributedString>
+                    <color key="highlightedColor" red="0.36750315656565657" green="0.36750315656565657" blue="0.36750315656565657" alpha="0.51000000000000001" colorSpace="calibratedRGB"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Descuento %" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GA6-W1-n9X">
+                    <rect key="frame" x="253" y="248" width="50" height="40"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                    <color key="textColor" red="1" green="0.0" blue="0.090197819205283913" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="G7h-Es-3FH">
+                    <rect key="frame" x="0.0" y="65" width="320" height="150"/>
+                    <color key="backgroundColor" red="0.72733191287878785" green="0.72733191287878785" blue="0.72733191287878785" alpha="0.65000000000000002" colorSpace="calibratedRGB"/>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Precio:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eh0-To-9tk">
+                    <rect key="frame" x="17" y="257" width="54" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4bU-C3-6b5">
+                    <rect key="frame" x="93" y="471" width="134" height="48"/>
+                    <color key="backgroundColor" red="0.99202269724302727" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <color key="tintColor" red="1" green="0.0" blue="0.10015009929157515" alpha="1" colorSpace="calibratedRGB"/>
+                    <state key="normal">
+                        <string key="title">Obtener promoción
+n</string>
+                    </state>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                            <integer key="value" value="10"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                    </userDefinedRuntimeAttributes>
+                </button>
+                <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2Tv-aP-G2s">
+                    <rect key="frame" x="0.0" y="524" width="320" height="44"/>
+                    <items>
+                        <barButtonItem title="Tiempo restante" style="plain" id="SyL-Hv-T5K" propertyAccessControl="all"/>
+                        <barButtonItem style="plain" systemItem="flexibleSpace" id="KdC-Wu-HpS"/>
+                        <barButtonItem title="Cupón" id="boR-PB-hBp">
+                            <color key="tintColor" red="1" green="0.010051519906342232" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        </barButtonItem>
+                    </items>
+                </toolbar>
+                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p4T-48-gJe">
+                    <rect key="frame" x="10" y="309" width="300" height="150"/>
+                    <color key="backgroundColor" red="0.89881234217171713" green="0.89881234217171713" blue="0.89881234217171713" alpha="0.17999999999999999" colorSpace="calibratedRGB"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                </textView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Titulo promocion" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sxX-Ks-Gvw">
+                    <rect key="frame" x="17" y="231" width="260" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fzp-ZC-aFl">
+                    <rect key="frame" x="93" y="278" width="50" height="21"/>
+                    <attributedString key="attributedText">
+                        <fragment content="Precio total">
+                            <attributes>
                                 <color key="NSColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <font key="NSFont" size="17" name="HelveticaNeue"/>
+                                <font key="NSFont" size="14" name="ArialMT"/>
                                 <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
                             </attributes>
                         </fragment>
                     </attributedString>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Precio actual" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GA6-W1-n9X">
-                    <rect key="frame" x="183" y="273" width="100" height="21"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                    <nil key="highlightedColor"/>
-                </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Descripcion" lineBreakMode="tailTruncation" numberOfLines="10" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FK0-2e-xqd">
-                    <rect key="frame" x="30" y="321" width="269" height="218"/>
-                    <color key="backgroundColor" red="0.94965277777777779" green="0.94965277777777779" blue="0.94965277777777779" alpha="1" colorSpace="calibratedRGB"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                    <nil key="highlightedColor"/>
-                </label>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="YCc-Ef-c76">
-                    <rect key="frame" x="8" y="33" width="304" height="178"/>
-                </imageView>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Fecha fin" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uHP-Mm-1yf">
-                    <rect key="frame" x="212" y="219" width="71" height="21"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                    <nil key="highlightedColor"/>
-                </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Fecha inicio" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dn2-Ci-tSR">
-                    <rect key="frame" x="40" y="219" width="92" height="21"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                    <nil key="highlightedColor"/>
-                </label>
             </subviews>
-            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-            <point key="canvasLocation" x="188" y="339"/>
+            <color key="backgroundColor" red="1" green="0.98947368421052628" blue="0.98947368421052628" alpha="0.31" colorSpace="calibratedRGB"/>
+            <point key="canvasLocation" x="249" y="326"/>
         </view>
     </objects>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

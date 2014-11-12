@@ -11,6 +11,7 @@ namespace NearBuy
 	public partial class PromosViewController : UIViewController
 	{
 		public int idTienda;
+		public string nombreTienda;
 		public List<JsonPromos> jsonPromos = new List<JsonPromos>();
 		public PromosViewController () : base ("PromosViewController", null)
 		{
@@ -18,8 +19,10 @@ namespace NearBuy
 
 		}
 
-		public PromosViewController(int numeroTienda){
-			idTienda = numeroTienda;
+		public PromosViewController(int __numeroTienda, string __nombreTienda){
+			idTienda = __numeroTienda;
+			nombreTienda = __nombreTienda;
+
 
 		}
 
@@ -35,7 +38,7 @@ namespace NearBuy
 		{
 
 			base.ViewDidLoad ();
-			this.Title = "Promociones";
+			this.Title = nombreTienda;
 			GetPromoData (idTienda);
 
 			DataSourceTienda data = new DataSourceTienda (jsonPromos, this);

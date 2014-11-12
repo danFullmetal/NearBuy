@@ -13,43 +13,53 @@ namespace NearBuy
 	partial class InfoView
 	{
 		[Outlet]
-		MonoTouch.UIKit.UIImageView imgViewPromo { get; set; }
+		MonoTouch.UIKit.UIBarButtonItem btnCountdown { get; set; }
 
 		[Outlet]
-		MonoTouch.UIKit.UILabel lbDescripcion { get; set; }
+		MonoTouch.UIKit.UILabel lbCountdown { get; set; }
 
 		[Outlet]
 		MonoTouch.UIKit.UILabel lbJSFechaFin { get; set; }
-
-		[Outlet]
-		MonoTouch.UIKit.UILabel lbJSFechaIn { get; set; }
 
 		[Outlet]
 		MonoTouch.UIKit.UILabel lbPrecioA { get; set; }
 
 		[Outlet]
 		MonoTouch.UIKit.UILabel lbPrecioB { get; set; }
+
+		[Outlet]
+		MonoTouch.UIKit.UILabel lbPrecioTotal { get; set; }
+
+		[Outlet]
+		MonoTouch.UIKit.UILabel lbTiempo { get; set; }
+
+		[Outlet]
+		MonoTouch.UIKit.UILabel lbTimer { get; set; }
+
+		[Outlet]
+		MonoTouch.UIKit.UILabel lbTituloPromo { get; set; }
+
+		[Outlet]
+		MonoTouch.UIKit.UITextView txtDescr { get; set; }
+
+		[Outlet]
+		MonoTouch.UIKit.UIImageView uiImagePromo { get; set; }
 		
 		void ReleaseDesignerOutlets ()
 		{
-			if (imgViewPromo != null) {
-				imgViewPromo.Dispose ();
-				imgViewPromo = null;
+			if (btnCountdown != null) {
+				btnCountdown.Dispose ();
+				btnCountdown = null;
 			}
 
-			if (lbDescripcion != null) {
-				lbDescripcion.Dispose ();
-				lbDescripcion = null;
+			if (lbCountdown != null) {
+				lbCountdown.Dispose ();
+				lbCountdown = null;
 			}
 
 			if (lbJSFechaFin != null) {
 				lbJSFechaFin.Dispose ();
 				lbJSFechaFin = null;
-			}
-
-			if (lbJSFechaIn != null) {
-				lbJSFechaIn.Dispose ();
-				lbJSFechaIn = null;
 			}
 
 			if (lbPrecioA != null) {
@@ -60,6 +70,36 @@ namespace NearBuy
 			if (lbPrecioB != null) {
 				lbPrecioB.Dispose ();
 				lbPrecioB = null;
+			}
+
+			if (lbTiempo != null) {
+				lbTiempo.Dispose ();
+				lbTiempo = null;
+			}
+
+			if (lbTimer != null) {
+				lbTimer.Dispose ();
+				lbTimer = null;
+			}
+
+			if (txtDescr != null) {
+				txtDescr.Dispose ();
+				txtDescr = null;
+			}
+
+			if (uiImagePromo != null) {
+				uiImagePromo.Dispose ();
+				uiImagePromo = null;
+			}
+
+			if (lbTituloPromo != null) {
+				lbTituloPromo.Dispose ();
+				lbTituloPromo = null;
+			}
+
+			if (lbPrecioTotal != null) {
+				lbPrecioTotal.Dispose ();
+				lbPrecioTotal = null;
 			}
 		}
 	}

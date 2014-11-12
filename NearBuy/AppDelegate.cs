@@ -37,8 +37,7 @@ namespace NearBuy
 
 			Menu = new SlideoutNavigationController();
 			Menu.MainViewController = new MainNavigationController(new RootViewController(), Menu);
-			Menu.MenuViewController = new MenuNavigationController(new DummyControllerLeft(), Menu) { NavigationBarHidden = true };
-
+			Menu.MenuViewController = new MenuNavigationController(new MenuView(), Menu) { NavigationBarHidden = true };
 			window.RootViewController = Menu;
 			window.MakeKeyAndVisible ();
 
@@ -48,17 +47,17 @@ namespace NearBuy
 
 	public class DummyControllerLeft : DialogViewController
 	{
-		public DummyControllerLeft () 
-			: base(UITableViewStyle.Plain,new RootElement(""))
+		public DummyControllerLeft () : base(UITableViewStyle.Plain,new RootElement(""))
 		{
+			//UITableViewStyle.Plain,new RootElement("")
 		}
 
 		public override void ViewDidLoad ()
 		{
 			base.ViewDidLoad ();
+			/*
 			var frame1 = new Rectangle (10,10,240,30);
 			//var txtSearch = new UITextField (frame1);
-
 			Root.Add (new Section () {
 				new UITextField(frame1){Placeholder = "Busqueda", BorderStyle = UITextBorderStyle.RoundedRect},
 				new StyledStringElement("Inicio", () => NavigationController.PushViewController(new RootViewController(), true)) { TextColor = UIColor.Black, BackgroundColor = UIColor.Clear },
@@ -66,8 +65,10 @@ namespace NearBuy
 				new StyledStringElement("Favoritos", () => NavigationController.PushViewController(new FavorViewController(), true)) { TextColor = UIColor.Black, BackgroundColor = UIColor.Clear },
 				new StyledStringElement("Ayuda", () => NavigationController.PushViewController(new AyudaViewController(), true)) { TextColor = UIColor.Black, BackgroundColor = UIColor.Clear },
 			});
-
+	
 			TableView.SeparatorStyle = UITableViewCellSeparatorStyle.None;
+
+			*/
 
 			//var img = new UIImageView(UIImage.FromFile("galaxy.png"));
 			//TableView.BackgroundView = img;

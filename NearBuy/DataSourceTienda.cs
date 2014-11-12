@@ -34,23 +34,13 @@ namespace NearBuy
 
 		public override void RowSelected (UITableView tableView, NSIndexPath indexPath)
 		{
-
 			parentController.NavigationController.PushViewController (new InfoView (ListaDatos [indexPath.Row]), true);
 			tableView.DeselectRow (indexPath, true); // iOS convention is to remove the highlight
 		}
 
 		public override string TitleForHeader (UITableView tableView, int section)
 		{
-			return "Lista Datos";
-		}
-
-		public override string TitleForFooter (UITableView tableView, int section)
-		{
-			if (ListaDatos.Count > 0) {
-				return "Elementos: " + ListaDatos.Count;
-			} else {
-				return "Elementos: 0";
-			}
+			return "Promociones";
 		}
 
 	}

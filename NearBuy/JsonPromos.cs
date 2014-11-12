@@ -16,7 +16,7 @@ namespace NearBuy
 		public string descripcion { get; set; }
 		public string titulo { get; set; }
 		public string tipo { get; set; }
-		public string imagen { get; set; }
+		//public string imagen { get; set; }
 
 	}
 }
