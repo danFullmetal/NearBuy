@@ -35,10 +35,12 @@ namespace NearBuy
 			celda.SelectionStyle = UITableViewCellSelectionStyle.Blue;
 			celda.TextLabel.Text = ListaDatos [indexPath.Row].nombre;
 			celda.Accessory = UITableViewCellAccessory.DisclosureIndicator;
-			string imagenURL = "http://www.bordadossantiago.com/img/wolv.jpg";
-			using (var url = new NSUrl (imagenURL))
-			using (var data = NSData.FromUrl (url))
-			celda.ImageView.Image = UIImage.LoadFromData (data);
+			if (Reachability.IsHostReachable ("www.bordadossantiago.com")) {
+				string imagenURL = "http://www.bordadossantiago.com/Img/" + ListaDatos [indexPath.Row].logo;
+				using (var url = new NSUrl (imagenURL))
+				using (var data = NSData.FromUrl (url))
+				celda.ImageView.Image = UIImage.LoadFromData (data);
+			}
 			celda.DetailTextLabel.Text = "Promociones disponibles: " + ListaDatos [indexPath.Row].promociones.ToString();
 			celda.DetailTextLabel.TextColor = UIColor.Gray;
 			return celda;

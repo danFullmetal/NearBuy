@@ -103,7 +103,7 @@ namespace NearBuy
 
 		public async void InsertUIImage ()
 		{
-			string imagenURL = "http://www.bordadossantiago.com/img/wolv.jpg";
+			string imagenURL = "http://www.bordadossantiago.com/Img/wolv.jpg";
 			uiImagePromo.Image = await this.LoadImage (imagenURL);
 			BTProgressHUD.Dismiss();
 		}
