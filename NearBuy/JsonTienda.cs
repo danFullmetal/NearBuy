@@ -12,6 +12,7 @@ namespace NearBuy
 		public string nombre { get; set; }
 		public string logo { get; set; }
 		public string mensaje { get; set; }
+		public int promociones { get; set; }
 		public int version { get; set; }
 	}
 }

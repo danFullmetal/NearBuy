@@ -30,11 +30,17 @@ namespace NearBuy
 		{
 			UITableViewCell celda = tableView.DequeueReusableCell (Identificador);
 			if (celda == null) {
-				celda = new UITableViewCell (UITableViewCellStyle.Default, Identificador);
+				celda = new UITableViewCell (UITableViewCellStyle.Subtitle, Identificador);
 			}
 			celda.SelectionStyle = UITableViewCellSelectionStyle.Blue;
 			celda.TextLabel.Text = ListaDatos [indexPath.Row].nombre;
 			celda.Accessory = UITableViewCellAccessory.DisclosureIndicator;
+			string imagenURL = "http://www.bordadossantiago.com/img/wolv.jpg";
+			using (var url = new NSUrl (imagenURL))
+			using (var data = NSData.FromUrl (url))
+			celda.ImageView.Image = UIImage.LoadFromData (data);
+			celda.DetailTextLabel.Text = "Promociones disponibles: " + ListaDatos [indexPath.Row].promociones.ToString();
+			celda.DetailTextLabel.TextColor = UIColor.Gray;
 			return celda;
 		}
 

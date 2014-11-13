@@ -89,11 +89,11 @@
       <HintPath>..\Components\restsharp-104.4.0.1\lib\ios\RestSharp.MonoTouch.dll</HintPath>
     </Reference>
     <Reference Include="System.Net.Http" />
-    <Reference Include="BTProgressHUD">
-      <HintPath>..\Components\btprogresshud-1.13\lib\ios\BTProgressHUD.dll</HintPath>
-    </Reference>
     <Reference Include="GCDiscreetNotification">
       <HintPath>..\Components\gcdiscreetnotification-1.0.2.1\lib\ios\GCDiscreetNotification.dll</HintPath>
+    </Reference>
+    <Reference Include="BTProgressHUD">
+      <HintPath>..\Components\btprogresshud-1.13\lib\ios\BTProgressHUD.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -172,10 +172,6 @@
     </XamarinComponentReference>
     <XamarinComponentReference Include="btprogresshud">
       <Version>1.13</Version>
-      <Visible>False</Visible>
-    </XamarinComponentReference>
-    <XamarinComponentReference Include="gcdiscreetnotification">
-      <Version>1.0.2.1</Version>
       <Visible>False</Visible>
     </XamarinComponentReference>
   </ItemGroup>
