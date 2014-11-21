@@ -16,6 +16,9 @@ namespace NearBuy
 		MonoTouch.UIKit.UIBarButtonItem btnCountdown { get; set; }
 
 		[Outlet]
+		MonoTouch.UIKit.UIButton btnFav { get; set; }
+
+		[Outlet]
 		MonoTouch.UIKit.UILabel lbCountdown { get; set; }
 
 		[Outlet]
@@ -40,6 +43,9 @@ namespace NearBuy
 		MonoTouch.UIKit.UILabel lbTituloPromo { get; set; }
 
 		[Outlet]
+		MonoTouch.UIKit.UISwitch swiFav { get; set; }
+
+		[Outlet]
 		MonoTouch.UIKit.UITextView txtDescr { get; set; }
 
 		[Outlet]
@@ -50,6 +56,11 @@ namespace NearBuy
 			if (btnCountdown != null) {
 				btnCountdown.Dispose ();
 				btnCountdown = null;
+			}
+
+			if (btnFav != null) {
+				btnFav.Dispose ();
+				btnFav = null;
 			}
 
 			if (lbCountdown != null) {
@@ -72,6 +83,16 @@ namespace NearBuy
 				lbPrecioB = null;
 			}
 
+			if (lbPrecioTotal != null) {
+				lbPrecioTotal.Dispose ();
+				lbPrecioTotal = null;
+			}
+
+			if (swiFav != null) {
+				swiFav.Dispose ();
+				swiFav = null;
+			}
+
 			if (lbTiempo != null) {
 				lbTiempo.Dispose ();
 				lbTiempo = null;
@@ -82,6 +103,11 @@ namespace NearBuy
 				lbTimer = null;
 			}
 
+			if (lbTituloPromo != null) {
+				lbTituloPromo.Dispose ();
+				lbTituloPromo = null;
+			}
+
 			if (txtDescr != null) {
 				txtDescr.Dispose ();
 				txtDescr = null;
@@ -90,16 +116,6 @@ namespace NearBuy
 			if (uiImagePromo != null) {
 				uiImagePromo.Dispose ();
 				uiImagePromo = null;
-			}
-
-			if (lbTituloPromo != null) {
-				lbTituloPromo.Dispose ();
-				lbTituloPromo = null;
-			}
-
-			if (lbPrecioTotal != null) {
-				lbPrecioTotal.Dispose ();
-				lbPrecioTotal = null;
 			}
 		}
 	}

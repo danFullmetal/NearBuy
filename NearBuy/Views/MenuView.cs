@@ -4,6 +4,7 @@ using System.Drawing;
 
 using MonoTouch.Foundation;
 using MonoTouch.UIKit;
+using MonoTouch.AudioToolbox;
 
 namespace NearBuy
 {
@@ -24,6 +25,13 @@ namespace NearBuy
 		public override void ViewDidLoad ()
 		{
 			base.ViewDidLoad ();
+
+			var frame = new RectangleF(10, 30, 240, 40);
+			var textfield1 = new UITextField(frame);
+			textfield1.BorderStyle = UITextBorderStyle.RoundedRect;
+			View.Add(textfield1);
+
+
 			
 			// Perform any additional setup after loading the view, typically from a nib.
 		}

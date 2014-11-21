@@ -35,8 +35,8 @@ namespace NearBuy
 			celda.SelectionStyle = UITableViewCellSelectionStyle.Blue;
 			celda.TextLabel.Text = ListaDatos [indexPath.Row].nombre;
 			celda.Accessory = UITableViewCellAccessory.DisclosureIndicator;
-			if (Reachability.IsHostReachable ("www.bordadossantiago.com")) {
-				string imagenURL = "http://www.bordadossantiago.com/Img/" + ListaDatos [indexPath.Row].logo;
+			if (Reachability.IsHostReachable ("www.codecags.com")) {
+				string imagenURL = "http://www.codecags.com/Img/" + ListaDatos [indexPath.Row].logo;
 				using (var url = new NSUrl (imagenURL))
 				using (var data = NSData.FromUrl (url))
 				celda.ImageView.Image = UIImage.LoadFromData (data);

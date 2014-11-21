@@ -22,6 +22,9 @@
     <MtouchLink>None</MtouchLink>
     <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
     <MtouchDebug>true</MtouchDebug>
+    <MtouchI18n>
+    </MtouchI18n>
+    <MtouchArch>i386</MtouchArch>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhoneSimulator' ">
     <DebugType>full</DebugType>
@@ -32,29 +35,6 @@
     <MtouchLink>None</MtouchLink>
     <ConsolePause>false</ConsolePause>
     <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|iPhone' ">
-    <DebugSymbols>true</DebugSymbols>
-    <DebugType>full</DebugType>
-    <Optimize>false</Optimize>
-    <OutputPath>bin\iPhone\Debug</OutputPath>
-    <DefineConstants>DEBUG;</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-    <ConsolePause>false</ConsolePause>
-    <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
-    <MtouchDebug>true</MtouchDebug>
-    <CodesignKey>iPhone Developer</CodesignKey>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhone' ">
-    <DebugType>full</DebugType>
-    <Optimize>true</Optimize>
-    <OutputPath>bin\iPhone\Release</OutputPath>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-    <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
-    <ConsolePause>false</ConsolePause>
-    <CodesignKey>iPhone Developer</CodesignKey>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Ad-Hoc|iPhone' ">
     <DebugType>full</DebugType>
@@ -79,6 +59,18 @@
     <ConsolePause>false</ConsolePause>
     <CodesignProvision>Automatic:AppStore</CodesignProvision>
   </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhone' ">
+    <Optimize>false</Optimize>
+    <OutputPath>bin\iPhone\Release</OutputPath>
+    <WarningLevel>4</WarningLevel>
+    <CodesignKey>iPhone Developer</CodesignKey>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|iPhone' ">
+    <Optimize>false</Optimize>
+    <OutputPath>bin\iPhone\Debug</OutputPath>
+    <WarningLevel>4</WarningLevel>
+    <CodesignKey>iPhone Developer</CodesignKey>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Xml" />
@@ -95,12 +87,17 @@
     <Reference Include="BTProgressHUD">
       <HintPath>..\Components\btprogresshud-1.13\lib\ios\BTProgressHUD.dll</HintPath>
     </Reference>
+    <Reference Include="SDWebImage">
+      <HintPath>..\Components\sdwebimage-3.7.1.1\lib\ios\SDWebImage.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\Default-568h%402x.png" />
     <BundleResource Include="Resources\Icon.png" />
     <BundleResource Include="Resources\diamond.png" />
     <BundleResource Include="Resources\base1.png" />
+    <BundleResource Include="Resources\image22.png" />
+    <BundleResource Include="Resources\image23.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Info.plist" />
@@ -140,15 +137,12 @@
     <Compile Include="Views\PromosViewController.designer.cs">
       <DependentUpon>PromosViewController.cs</DependentUpon>
     </Compile>
-    <Compile Include="Views\DetailPromo.cs" />
-    <Compile Include="Views\DetailPromo.designer.cs">
-      <DependentUpon>DetailPromo.cs</DependentUpon>
-    </Compile>
     <Compile Include="Views\MenuView.cs" />
     <Compile Include="Views\MenuView.designer.cs">
       <DependentUpon>MenuView.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\RootViewController.cs" />
+    <Compile Include="LoadingOverlay.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.MonoTouch.CSharp.targets" />
   <ItemGroup>
@@ -161,7 +155,6 @@
     <InterfaceDefinition Include="Views\AyudaViewController.xib" />
     <InterfaceDefinition Include="Views\InfoView.xib" />
     <InterfaceDefinition Include="Views\PromosViewController.xib" />
-    <InterfaceDefinition Include="Views\DetailPromo.xib" />
     <InterfaceDefinition Include="Views\MenuView.xib" />
     <InterfaceDefinition Include="Views\RootViewController.xib" />
   </ItemGroup>
@@ -172,6 +165,10 @@
     </XamarinComponentReference>
     <XamarinComponentReference Include="btprogresshud">
       <Version>1.13</Version>
+      <Visible>False</Visible>
+    </XamarinComponentReference>
+    <XamarinComponentReference Include="sdwebimage">
+      <Version>3.7.1.1</Version>
       <Visible>False</Visible>
     </XamarinComponentReference>
   </ItemGroup>

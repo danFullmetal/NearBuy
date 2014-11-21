@@ -50,7 +50,7 @@ namespace NearBuy
 		}
 		public void GetPromoData(int idTienda){
 
-			if (!Reachability.IsHostReachable ("www.bordadossantiago.com")) {
+			if (!Reachability.IsHostReachable ("www.codecags.com")) {
 				var alert = new UIAlertView {
 					Title = "Unable to connect to server", 
 					Message = "Verify network connections"
@@ -58,8 +58,8 @@ namespace NearBuy
 				alert.AddButton ("OK");
 				alert.Show ();
 			} else {
-				var client = new RestClient ("http://bordadossantiago.com/jsonPromos.php");
-				var request = new RestRequest ("resource/{Name}", Method.POST);
+				var client = new RestClient ("http://codecags.com");
+				var request = new RestRequest ("jsonPromos.php", Method.POST);
 
 				request.RequestFormat = DataFormat.Json;
 				request.AddParameter ("idTienda",idTienda);
