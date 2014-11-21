@@ -64,13 +64,23 @@ namespace NearBuy
 			
 		public void GetData ()
 		{
-
+			if(!Reachability.IsHostReachable("http://codecags.com")) {
 				var client = new RestClient ("http://codecags.com");
 				var request = new RestRequest ("jsonTienda.php", Method.GET);
 				request.RequestFormat = DataFormat.Json;
 				var response = client.Execute (request);
 				RestSharp.Deserializers.JsonDeserializer deserial = new JsonDeserializer ();
 				jsonObj = deserial.Deserialize<List<JsonTienda>> (response);
+			}
+			else
+			{
+				var alert = new UIAlertView ("Connection Error", "Unable to connect to server", null, "OK", new string[] {"Cancel"});
+				alert.Clicked += (s, b) => {
+					Console.WriteLine ("Button " + b.ButtonIndex.ToString () + " clicked");
+				};
+				alert.Show();
+			}
+				
 
 		}
 	}
