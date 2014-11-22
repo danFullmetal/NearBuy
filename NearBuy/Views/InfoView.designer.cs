@@ -13,6 +13,9 @@ namespace NearBuy
 	partial class InfoView
 	{
 		[Outlet]
+		MonoTouch.UIKit.UIButton _btnFav { get; set; }
+
+		[Outlet]
 		MonoTouch.UIKit.UIBarButtonItem btnCountdown { get; set; }
 
 		[Outlet]
@@ -53,14 +56,19 @@ namespace NearBuy
 		
 		void ReleaseDesignerOutlets ()
 		{
-			if (btnCountdown != null) {
-				btnCountdown.Dispose ();
-				btnCountdown = null;
-			}
-
 			if (btnFav != null) {
 				btnFav.Dispose ();
 				btnFav = null;
+			}
+
+			if (_btnFav != null) {
+				_btnFav.Dispose ();
+				_btnFav = null;
+			}
+
+			if (btnCountdown != null) {
+				btnCountdown.Dispose ();
+				btnCountdown = null;
 			}
 
 			if (lbCountdown != null) {
@@ -88,11 +96,6 @@ namespace NearBuy
 				lbPrecioTotal = null;
 			}
 
-			if (swiFav != null) {
-				swiFav.Dispose ();
-				swiFav = null;
-			}
-
 			if (lbTiempo != null) {
 				lbTiempo.Dispose ();
 				lbTiempo = null;
@@ -106,6 +109,11 @@ namespace NearBuy
 			if (lbTituloPromo != null) {
 				lbTituloPromo.Dispose ();
 				lbTituloPromo = null;
+			}
+
+			if (swiFav != null) {
+				swiFav.Dispose ();
+				swiFav = null;
 			}
 
 			if (txtDescr != null) {

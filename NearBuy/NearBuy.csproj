@@ -95,6 +95,8 @@
     <BundleResource Include="Resources\base1.png" />
     <BundleResource Include="Resources\image22.png" />
     <BundleResource Include="Resources\image23.png" />
+    <BundleResource Include="Resources\star-gold45.png" />
+    <BundleResource Include="Resources\star-grey45.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Info.plist" />

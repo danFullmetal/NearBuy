@@ -30,6 +30,7 @@ namespace NearBuy
 		public DateTime labelDate;
 		public float descuentos;
 		public string tiempos;
+		public static int favorite = 0;
 
 		public string dateFormat = "MM/dd/yyyy hh:mm:ss";
 
@@ -97,8 +98,18 @@ namespace NearBuy
 			lbPrecioA.AttributedText = attrString;
 			lbPrecioB.Text = (jsonPromos.descuento*100).ToString()+"%";
 			lbPrecioTotal.Text = "$"+(jsonPromos.precio-(jsonPromos.precio*jsonPromos.descuento)).ToString();
+			_btnFav.SetImage(UIImage.FromFile ("star-grey45.png"), UIControlState.Normal);
+			_btnFav.SetImage(UIImage.FromFile ("star-gold45.png"), UIControlState.Highlighted);
+			_btnFav.TouchUpInside += delegate {
 
-
+				if(favorite == 0){
+					_btnFav.SetImage(UIImage.FromFile ("star-gold45.png"), UIControlState.Normal);
+					favorite = 1;
+				}else{
+					_btnFav.SetImage(UIImage.FromFile ("star-grey45.png"), UIControlState.Normal);
+					favorite = 0;
+				}
+			};
 		}
 
 		public async void InsertUIImage ()

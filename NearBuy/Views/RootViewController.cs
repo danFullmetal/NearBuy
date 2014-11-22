@@ -52,7 +52,6 @@ namespace NearBuy
 
 
 
-
 			GetData ();
 
 			DataSource data = new DataSource (jsonObj, this);
@@ -64,8 +63,9 @@ namespace NearBuy
 			
 		public void GetData ()
 		{
-			if(!Reachability.IsHostReachable("http://codecags.com")) {
-				var client = new RestClient ("http://codecags.com");
+			if(Reachability.IsHostReachable("www.codecags.com")) {
+				Console.WriteLine ("HOLA");
+				var client = new RestClient ("http://www.codecags.com");
 				var request = new RestRequest ("jsonTienda.php", Method.GET);
 				request.RequestFormat = DataFormat.Json;
 				var response = client.Execute (request);

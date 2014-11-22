@@ -6,7 +6,9 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="InfoView">
             <connections>
+                <outlet property="_btnFav" destination="Fen-C1-ngU" id="Bis-At-KmO"/>
                 <outlet property="btnCountdown" destination="SyL-Hv-T5K" id="29L-D8-Qsn"/>
+                <outlet property="btnFav" destination="Fen-C1-ngU" id="5Qs-be-aln"/>
                 <outlet property="lbPrecioA" destination="Yxc-kB-bhm" id="25T-d1-ZyX"/>
                 <outlet property="lbPrecioB" destination="GA6-W1-n9X" id="hTb-iW-yuR"/>
                 <outlet property="lbPrecioTotal" destination="Fzp-ZC-aFl" id="JnQ-ur-grX"/>
@@ -33,12 +35,6 @@
                         </fragment>
                     </attributedString>
                     <color key="highlightedColor" red="0.36750315656565657" green="0.36750315656565657" blue="0.36750315656565657" alpha="0.51000000000000001" colorSpace="calibratedRGB"/>
-                </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Descuento %" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GA6-W1-n9X">
-                    <rect key="frame" x="253" y="248" width="50" height="40"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="19"/>
-                    <color key="textColor" red="1" green="0.0" blue="0.090197819205283913" alpha="1" colorSpace="calibratedRGB"/>
-                    <nil key="highlightedColor"/>
                 </label>
                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="G7h-Es-3FH">
                     <rect key="frame" x="0.0" y="65" width="320" height="150"/>
@@ -75,12 +71,6 @@ n</string>
                         </barButtonItem>
                     </items>
                 </toolbar>
-                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p4T-48-gJe">
-                    <rect key="frame" x="10" y="309" width="300" height="150"/>
-                    <color key="backgroundColor" red="0.89881234217171713" green="0.89881234217171713" blue="0.89881234217171713" alpha="0.17999999999999999" colorSpace="calibratedRGB"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                </textView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Titulo promocion" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sxX-Ks-Gvw">
                     <rect key="frame" x="17" y="231" width="260" height="21"/>
                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
@@ -88,7 +78,7 @@ n</string>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fzp-ZC-aFl">
-                    <rect key="frame" x="93" y="278" width="50" height="21"/>
+                    <rect key="frame" x="98" y="278" width="78" height="21"/>
                     <attributedString key="attributedText">
                         <fragment content="Precio total">
                             <attributes>
@@ -98,6 +88,24 @@ n</string>
                             </attributes>
                         </fragment>
                     </attributedString>
+                    <nil key="highlightedColor"/>
+                </label>
+                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" textAlignment="justified" translatesAutoresizingMaskIntoConstraints="NO" id="p4T-48-gJe">
+                    <rect key="frame" x="5" y="312" width="310" height="150"/>
+                    <color key="backgroundColor" red="0.89881234217171713" green="0.89881234217171713" blue="0.89881234217171713" alpha="0.17999999999999999" colorSpace="calibratedRGB"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                </textView>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fen-C1-ngU">
+                    <rect key="frame" x="273" y="222" width="100" height="42"/>
+                    <state key="normal" title="Button">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Descuento %" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GA6-W1-n9X">
+                    <rect key="frame" x="264" y="264" width="51" height="40"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                    <color key="textColor" red="1" green="0.0" blue="0.090197819205283913" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
             </subviews>
