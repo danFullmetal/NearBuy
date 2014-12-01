@@ -91,6 +91,9 @@
     <Reference Include="SDWebImage">
       <HintPath>..\Components\sdwebimage-3.7.1.1\lib\ios\SDWebImage.dll</HintPath>
     </Reference>
+    <Reference Include="SQLite">
+      <HintPath>..\Components\sqlite-net-1.0.8.1\lib\ios\SQLite.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\Default-568h%402x.png" />
@@ -105,6 +108,7 @@
     <BundleResource Include="Resources\reload.png" />
     <BundleResource Include="Resources\magnifyingglass.png" />
     <BundleResource Include="Resources\promociones_990x560_2.jpg" />
+    <BundleResource Include="Resources\placeholder.jpg" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Info.plist" />
@@ -157,6 +161,7 @@
     <Compile Include="Views\Catego2ViewController.designer.cs">
       <DependentUpon>Catego2ViewController.cs</DependentUpon>
     </Compile>
+    <Compile Include="Favorites.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.MonoTouch.CSharp.targets" />
   <ItemGroup>
@@ -186,11 +191,19 @@
       <Version>3.7.1.1</Version>
       <Visible>False</Visible>
     </XamarinComponentReference>
+    <XamarinComponentReference Include="sqlite-net">
+      <Version>1.0.8.1</Version>
+      <Visible>False</Visible>
+    </XamarinComponentReference>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\MonoTouch.SlideoutNavigation\MonoTouch.SlideoutNavigation.csproj">
       <Project>{6D7B9B53-CFEF-46BE-A608-14A4A1381CF6}</Project>
       <Name>MonoTouch.SlideoutNavigation</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <ImageAsset Include="Favorites.xcassets\AppIcons.appiconset\Contents.json" />
+    <ImageAsset Include="Favorites.xcassets\LaunchImages.launchimage\Contents.json" />
   </ItemGroup>
 </Project>

@@ -11,6 +11,9 @@ using MonoTouch.Dialog.Utilities;
 /// <summary>
 /// Data source.
 /// </summary>
+using SDWebImage;
+
+
 namespace NearBuy
 {
 	public class DataSource : UITableViewSource
@@ -30,35 +33,23 @@ namespace NearBuy
 			return ListaDatos.Count;
 		}
 
-		public override UITableViewCell GetCell (UITableView tableView, NSIndexPath indexPath)
+		public  override UITableViewCell GetCell (UITableView tableView, NSIndexPath indexPath)
 		{
-
-
-
-			var celda = tableView.DequeueReusableCell (Identificador);
-
-
+			UITableViewCell celda = tableView.DequeueReusableCell (Identificador);
 			if (celda == null) {
 				celda = new UITableViewCell (UITableViewCellStyle.Subtitle, Identificador);
 			}
 			celda.SelectionStyle = UITableViewCellSelectionStyle.Blue;
 			celda.TextLabel.Text = ListaDatos [indexPath.Row].nombre;
 			celda.Accessory = UITableViewCellAccessory.DisclosureIndicator;
-
-			//if (Reachability.IsHostReachable ("www.codecags.com")) {
-
-
-			//string imagenURL = "http://www.codecags.com/Img/" + ListaDatos [indexPath.Row].logo;
-				
-
-			//using (var url = new NSUrl (imagenURL))
-			//using (var data = NSData.FromUrl (url))
-			//celda.ImageView.Image = UIImage.LoadFromData (data);
-			//}
-
+			if (Reachability.IsHostReachable ("www.codecags.com")) {
+				celda.ImageView.SetImage (
+					url: new NSUrl ("http://www.codecags.com/Img/" + ListaDatos [indexPath.Row].logo), 
+					placeholder: UIImage.FromBundle ("placeholder.jpg")
+				);
+			}
 			celda.DetailTextLabel.Text = "Promociones disponibles: " + ListaDatos [indexPath.Row].promociones.ToString();
 			celda.DetailTextLabel.TextColor = UIColor.Gray;
-
 			return celda;
 		}
 
