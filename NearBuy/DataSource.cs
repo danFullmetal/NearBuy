@@ -8,7 +8,9 @@ using MonoTouch.Foundation;
 using System.Linq;
 using MonoTouch.Dialog.Utilities;
 
-
+/// <summary>
+/// Data source.
+/// </summary>
 namespace NearBuy
 {
 	public class DataSource : UITableViewSource
