@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6250" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6250" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
     </dependencies>
@@ -36,9 +36,12 @@
                     </attributedString>
                     <color key="highlightedColor" red="0.36750315656565657" green="0.36750315656565657" blue="0.36750315656565657" alpha="0.51000000000000001" colorSpace="calibratedRGB"/>
                 </label>
-                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="G7h-Es-3FH">
+                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="G7h-Es-3FH">
                     <rect key="frame" x="0.0" y="65" width="320" height="150"/>
                     <color key="backgroundColor" red="0.72733191287878785" green="0.72733191287878785" blue="0.72733191287878785" alpha="0.65000000000000002" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="150" id="Cr9-M7-xrd"/>
+                    </constraints>
                 </imageView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Precio:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eh0-To-9tk">
                     <rect key="frame" x="17" y="257" width="54" height="21"/>
@@ -46,7 +49,7 @@
                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4bU-C3-6b5">
+                <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4bU-C3-6b5">
                     <rect key="frame" x="93" y="471" width="134" height="48"/>
                     <color key="backgroundColor" red="0.99202269724302727" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     <color key="tintColor" red="1" green="0.0" blue="0.10015009929157515" alpha="1" colorSpace="calibratedRGB"/>
@@ -61,7 +64,7 @@ n</string>
                         <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
                     </userDefinedRuntimeAttributes>
                 </button>
-                <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2Tv-aP-G2s">
+                <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="bottom" translatesAutoresizingMaskIntoConstraints="NO" id="2Tv-aP-G2s">
                     <rect key="frame" x="0.0" y="524" width="320" height="44"/>
                     <items>
                         <barButtonItem title="Tiempo restante" style="plain" id="SyL-Hv-T5K" propertyAccessControl="all"/>
@@ -90,13 +93,13 @@ n</string>
                     </attributedString>
                     <nil key="highlightedColor"/>
                 </label>
-                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" textAlignment="justified" translatesAutoresizingMaskIntoConstraints="NO" id="p4T-48-gJe">
+                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" editable="NO" textAlignment="justified" translatesAutoresizingMaskIntoConstraints="NO" id="p4T-48-gJe">
                     <rect key="frame" x="5" y="312" width="310" height="150"/>
                     <color key="backgroundColor" red="0.89881234217171713" green="0.89881234217171713" blue="0.89881234217171713" alpha="0.17999999999999999" colorSpace="calibratedRGB"/>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                 </textView>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fen-C1-ngU">
+                <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fen-C1-ngU">
                     <rect key="frame" x="273" y="222" width="100" height="42"/>
                     <state key="normal" title="Button">
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -110,6 +113,20 @@ n</string>
                 </label>
             </subviews>
             <color key="backgroundColor" red="1" green="0.98947368421052628" blue="0.98947368421052628" alpha="0.31" colorSpace="calibratedRGB"/>
+            <constraints>
+                <constraint firstItem="G7h-Es-3FH" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="65" id="5hi-sX-0zi"/>
+                <constraint firstItem="2Tv-aP-G2s" firstAttribute="centerX" secondItem="p4T-48-gJe" secondAttribute="centerX" id="74M-5Q-Sb9"/>
+                <constraint firstAttribute="trailing" secondItem="2Tv-aP-G2s" secondAttribute="trailing" id="CYs-WF-pbF"/>
+                <constraint firstItem="Fen-C1-ngU" firstAttribute="top" secondItem="G7h-Es-3FH" secondAttribute="bottom" constant="7" id="DlX-oa-yMO"/>
+                <constraint firstItem="2Tv-aP-G2s" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="HN6-wA-4dT"/>
+                <constraint firstItem="2Tv-aP-G2s" firstAttribute="centerX" secondItem="4bU-C3-6b5" secondAttribute="centerX" id="IH0-aN-Z4z"/>
+                <constraint firstItem="2Tv-aP-G2s" firstAttribute="trailing" secondItem="G7h-Es-3FH" secondAttribute="trailing" id="UcH-tz-zed"/>
+                <constraint firstAttribute="bottom" secondItem="2Tv-aP-G2s" secondAttribute="bottom" id="bHR-Gg-n2E"/>
+                <constraint firstItem="2Tv-aP-G2s" firstAttribute="leading" secondItem="G7h-Es-3FH" secondAttribute="leading" id="nwK-rk-2pp"/>
+                <constraint firstItem="2Tv-aP-G2s" firstAttribute="top" secondItem="4bU-C3-6b5" secondAttribute="bottom" constant="5" id="rY0-Vq-hA0"/>
+                <constraint firstItem="G7h-Es-3FH" firstAttribute="centerX" secondItem="p4T-48-gJe" secondAttribute="centerX" id="zun-yi-tVc"/>
+            </constraints>
+            <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
             <point key="canvasLocation" x="249" y="326"/>
         </view>
     </objects>

@@ -70,9 +70,12 @@ namespace NearBuy
 			uiImagePromo.Image = uiImage;
 
 			*/
-			//tiempoAhora = DateTime.Now;
+			tiempoAhora = DateTime.Now;
 			//DateTime tiempoRestante = (jsonPromos.fechaVencimiento - tiempoAhora).TotalDays;
-
+			if(tiempoAhora < jsonPromos.fechaVencimiento){
+				UILocalNotification notification = new UILocalNotification () { AlertBody = "Existe un descuento!!!!" };
+				UIApplication.SharedApplication.PresentLocationNotificationNow (notification);
+			}
 
 
 			NSTimer timer = NSTimer.CreateRepeatingScheduledTimer (TimeSpan.FromSeconds(0.1), delegate {
@@ -114,9 +117,16 @@ namespace NearBuy
 
 		public async void InsertUIImage ()
 		{
-			string imagenURL = "http://www.codecags.com/Img/missingImage.png";
-			uiImagePromo.Image = await this.LoadImage (imagenURL);
-			BTProgressHUD.Dismiss();
+			if(jsonPromos.imagen == null){
+				string imagenURL = "http://www.codecags.com/Img/missingImage.png";
+				uiImagePromo.Image = await this.LoadImage (imagenURL);
+				BTProgressHUD.Dismiss();
+			}else{
+				string imagenURL = "http://www.codecags.com/Img/";
+				imagenURL+=jsonPromos.imagen;
+				uiImagePromo.Image = await this.LoadImage (imagenURL);
+				BTProgressHUD.Dismiss();
+			}
 		}
 
 		public async Task<UIImage> LoadImage (string imageUrl)

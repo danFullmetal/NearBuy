@@ -4,14 +4,17 @@ using System.Drawing;
 
 using MonoTouch.Foundation;
 using MonoTouch.UIKit;
+using System.Security.Cryptography;
+using System.Security.Policy;
 
 namespace NearBuy
 {
 	public partial class CategoViewController : UIViewController
 	{
+
 		public CategoViewController () : base ("CategoViewController", null)
 		{
-			Title = "Categorias";
+			Title = "iBeacon";
 		}
 
 		public override void DidReceiveMemoryWarning ()
@@ -25,6 +28,12 @@ namespace NearBuy
 		public override void ViewDidLoad ()
 		{
 			base.ViewDidLoad ();
+
+			lblBeacon.Text = "First Beacon";
+
+			bntCloseVC.Clicked += (object sender, EventArgs e) => {
+				DismissViewController(true,null);
+			};
 			
 			// Perform any additional setup after loading the view, typically from a nib.
 		}

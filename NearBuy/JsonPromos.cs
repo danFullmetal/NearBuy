@@ -14,6 +14,7 @@ namespace NearBuy
 		public DateTime fechaLanzamiento { get; set; }
 		public DateTime fechaVencimiento { get; set; }
 		public string descripcion { get; set; }
+		public string imagen { get; set; }
 		public string titulo { get; set; }
 		public string tipo { get; set; }
 		//public string imagen { get; set; }

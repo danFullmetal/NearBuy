@@ -4,14 +4,12 @@ using System.Drawing;
 
 using MonoTouch.Foundation;
 using MonoTouch.UIKit;
-using MonoTouch.AudioToolbox;
-using MonoTouch.Dialog;
 
 namespace NearBuy
 {
-	public partial class MenuView : UIViewController
+	public partial class Catego2ViewController : UIViewController
 	{
-		public MenuView () : base ("MenuView", null)
+		public Catego2ViewController () : base ("Catego2ViewController", null)
 		{
 		}
 
@@ -27,16 +25,9 @@ namespace NearBuy
 		{
 			base.ViewDidLoad ();
 
-
-			var frame = new RectangleF(10, 30, 240, 40);
-			var textfield1 = new UITextField(frame);
-			textfield1.BorderStyle = UITextBorderStyle.RoundedRect;
-			
-
-			View.Add(textfield1);
-
-
-
+			btnDissmiss.TouchUpInside += (object sender, EventArgs e) => {
+				DismissViewController(true,null);
+			};
 			
 			// Perform any additional setup after loading the view, typically from a nib.
 		}

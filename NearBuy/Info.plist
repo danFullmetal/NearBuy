@@ -5,7 +5,7 @@
 	<key>CFBundleDisplayName</key>
 	<string>NearBuy</string>
 	<key>CFBundleIdentifier</key>
-	<string>com.your-company.NearBuy</string>
+	<string>com.codec.NearBuy</string>
 	<key>CFBundleShortVersionString</key>
 	<string>1.0</string>
 	<key>CFBundleVersion</key>
@@ -13,7 +13,7 @@
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>MinimumOSVersion</key>
-	<string>7.0</string>
+	<string>8.0</string>
 	<key>UIDeviceFamily</key>
 	<array>
 		<integer>1</integer>
@@ -28,5 +28,7 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string>Ask the user</string>
 </dict>
 </plist>

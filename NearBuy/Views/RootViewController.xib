@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6250" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6250" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
     </dependencies>
@@ -15,18 +15,31 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="IFZ-5R-5jN">
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IFZ-5R-5jN">
                     <rect key="frame" x="-20" y="-20" width="360" height="608"/>
                     <subviews>
-                        <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" restorationIdentifier="tvDatos" alwaysBounceVertical="YES" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="wWq-L8-QOj">
+                        <tableView clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="tvDatos" alwaysBounceVertical="YES" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="wWq-L8-QOj">
                             <rect key="frame" x="20" y="20" width="320" height="568"/>
                         </tableView>
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstItem="wWq-L8-QOj" firstAttribute="top" secondItem="IFZ-5R-5jN" secondAttribute="top" constant="20" id="01d-bJ-L0f"/>
+                        <constraint firstItem="wWq-L8-QOj" firstAttribute="centerY" secondItem="IFZ-5R-5jN" secondAttribute="centerY" id="AfB-p6-TM3"/>
+                        <constraint firstItem="wWq-L8-QOj" firstAttribute="centerX" secondItem="IFZ-5R-5jN" secondAttribute="centerX" id="V24-dG-biz"/>
+                        <constraint firstItem="wWq-L8-QOj" firstAttribute="leading" secondItem="IFZ-5R-5jN" secondAttribute="leading" constant="20" id="Won-Pc-hpC"/>
+                    </constraints>
                 </view>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-            <point key="canvasLocation" x="-405" y="259"/>
+            <constraints>
+                <constraint firstItem="IFZ-5R-5jN" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="-20" id="APd-O7-gmR"/>
+                <constraint firstItem="IFZ-5R-5jN" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="-20" id="AYo-fF-bQ4"/>
+                <constraint firstItem="IFZ-5R-5jN" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="Hry-qm-8Qq"/>
+                <constraint firstItem="IFZ-5R-5jN" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="ZxM-C2-FxA"/>
+            </constraints>
+            <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
+            <point key="canvasLocation" x="-363" y="253"/>
         </view>
     </objects>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
