@@ -25,9 +25,10 @@ namespace NearBuy
 		{
 			base.ViewDidLoad ();
 
-			btnDissmiss.TouchUpInside += (object sender, EventArgs e) => {
+			btnCerrar.Clicked += (object sender, EventArgs e) => {
 				DismissViewController(true,null);
 			};
+				
 			
 			// Perform any additional setup after loading the view, typically from a nib.
 		}

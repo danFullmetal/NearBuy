@@ -188,7 +188,7 @@ namespace NearBuy
 						switch(beacon.Proximity){
 						case CLProximity.Immediate:
 							Console.WriteLine ("Beacon 1");
-							var CategoryVC = new CategoViewController();
+							var CategoryVC = new iBeaconVC();
 							this.NavigationController.PresentViewController(CategoryVC, true, null);
 							break;
 						}

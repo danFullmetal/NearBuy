@@ -9,25 +9,17 @@ using System.CodeDom.Compiler;
 
 namespace NearBuy
 {
-	[Register ("Catego2ViewController")]
-	partial class Catego2ViewController
+	[Register ("iBeaconVC")]
+	partial class iBeaconVC
 	{
 		[Outlet]
-		MonoTouch.UIKit.UIBarButtonItem btnCerrar { get; set; }
-
-		[Outlet]
-		MonoTouch.UIKit.UIButton btnDissmiss { get; set; }
+		MonoTouch.UIKit.UIBarButtonItem bntCerrar { get; set; }
 		
 		void ReleaseDesignerOutlets ()
 		{
-			if (btnDissmiss != null) {
-				btnDissmiss.Dispose ();
-				btnDissmiss = null;
-			}
-
-			if (btnCerrar != null) {
-				btnCerrar.Dispose ();
-				btnCerrar = null;
+			if (bntCerrar != null) {
+				bntCerrar.Dispose ();
+				bntCerrar = null;
 			}
 		}
 	}
