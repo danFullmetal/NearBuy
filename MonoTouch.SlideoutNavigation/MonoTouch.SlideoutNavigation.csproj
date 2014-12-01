@@ -46,6 +46,9 @@
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="monotouch" />
+    <Reference Include="RestSharp.MonoTouch">
+      <HintPath>..\Components\restsharp-104.4.0.1\lib\ios\RestSharp.MonoTouch.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.MonoTouch.CSharp.targets" />
   <ItemGroup>
@@ -60,5 +63,11 @@
   <ItemGroup>
     <BundleResource Include="MonoTouch.SlideoutNavigation.bundle\three_lines.png" />
     <BundleResource Include="MonoTouch.SlideoutNavigation.bundle\three_lines%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <XamarinComponentReference Include="restsharp">
+      <Version>104.4.0.1</Version>
+      <Visible>False</Visible>
+    </XamarinComponentReference>
   </ItemGroup>
 </Project>
